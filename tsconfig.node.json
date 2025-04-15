@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2024",
-    "lib": ["ES2024", "DOM"],
+    "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
 
+    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
 
-    "jsx": "react-jsx", // <--- MUHIM! JSXni React bilan avtomatik ishlatadi
-
+    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "vite.config.ts"], // <--- src/ni ham qo‘sh!
-  "exclude": ["node_modules"]
+  "include": ["vite.config.ts"]
 }
