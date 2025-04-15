@@ -54,7 +54,7 @@ export default function ProductDetail() {
     <Container sx={{ py: 8 }}>
       <Paper elevation={3} sx={{ p: 4 }}>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+          <Grid item={true} xs={12} md={6}>
             <img
               src={product.thumbnail}
               alt={product.title}
@@ -78,7 +78,7 @@ export default function ProductDetail() {
               ))}
             </ImageList>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item={true} xs={12} md={6}>
             <Typography variant="h4" component="h1" gutterBottom>
               {product.title}
             </Typography>

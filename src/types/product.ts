@@ -11,3 +11,4 @@ export interface Product {
     thumbnail: string;
     images: string[];
   }
+  
