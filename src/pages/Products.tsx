@@ -1,17 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Container, 
-  Grid, 
-  Card, 
-  CardContent, 
-  CardMedia, 
-  Typography, 
+import {
+  Container,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
   Rating,
   CardActionArea,
   CircularProgress,
   Box,
-  Skeleton,
 } from '@mui/material';
 import { Product } from '../types/product';
 
@@ -45,11 +43,25 @@ export default function Products() {
       <Typography variant="h4" component="h1" gutterBottom sx={{ mb: 4 }}>
         Products
       </Typography>
-      <Grid container spacing={4}>
+
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="space-between"
+        gap={3}
+      >
         {products.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} md={4}>
-            <Card 
-              sx={{ 
+          <Box
+            key={product.id}
+            flexBasis={{
+              xs: '100%',
+              sm: '48%',
+              md: '30%',
+            }}
+            sx={{ flexGrow: 1 }}
+          >
+            <Card
+              sx={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -60,7 +72,11 @@ export default function Products() {
                 },
               }}
             >
-              <CardActionArea component={Link} to={`/product/${product.id}`} aria-label={`View details for ${product.title}`}>
+              <CardActionArea
+                component={Link}
+                to={`/product/${product.id}`}
+                aria-label={`View details for ${product.title}`}
+              >
                 <CardMedia
                   component="img"
                   height="200"
@@ -87,9 +103,9 @@ export default function Products() {
                 </CardContent>
               </CardActionArea>
             </Card>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Box>
     </Container>
   );
 }
