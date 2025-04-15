@@ -10,7 +10,8 @@ import {
   Rating,
   CardActionArea,
   CircularProgress,
-  Box
+  Box,
+  Skeleton,
 } from '@mui/material';
 import { Product } from '../types/product';
 
@@ -46,7 +47,7 @@ export default function Products() {
       </Typography>
       <Grid container spacing={4}>
         {products.map((product) => (
-          <Grid item={true} key={product.id} xs={12} sm={6} md={4}>
+          <Grid item key={product.id} xs={12} sm={6} md={4}>
             <Card 
               sx={{ 
                 height: '100%',
@@ -59,7 +60,7 @@ export default function Products() {
                 },
               }}
             >
-              <CardActionArea component={Link} to={`/product/${product.id}`}>
+              <CardActionArea component={Link} to={`/product/${product.id}`} aria-label={`View details for ${product.title}`}>
                 <CardMedia
                   component="img"
                   height="200"
