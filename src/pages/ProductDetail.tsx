@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   Container,
+  Grid,
   Typography,
   Rating,
   Box,
@@ -52,12 +53,8 @@ export default function ProductDetail() {
   return (
     <Container sx={{ py: 8 }}>
       <Paper elevation={3} sx={{ p: 4 }}>
-        <Box
-          display="flex"
-          flexDirection={{ xs: 'column', md: 'row' }}
-          gap={4}
-        >
-          <Box flex={1}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
             <img
               src={product.thumbnail}
               alt={product.title}
@@ -80,9 +77,8 @@ export default function ProductDetail() {
                 </ImageListItem>
               ))}
             </ImageList>
-          </Box>
-
-          <Box flex={1}>
+          </Grid>
+          <Grid item xs={12} md={6}>
             <Typography variant="h4" component="h1" gutterBottom>
               {product.title}
             </Typography>
@@ -117,8 +113,8 @@ export default function ProductDetail() {
                 Stock: <Chip label={`${product.stock} units`} color={product.stock > 0 ? "success" : "error"} />
               </Typography>
             </Box>
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </Paper>
     </Container>
   );
